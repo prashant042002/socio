@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//code for the user to logged in 
 var expressSession = require('express-session');
 
 var indexRouter = require('./routes/index');
@@ -20,6 +21,7 @@ app.use(expressSession({
   saveUninitialized: false,
   secret: "heyheyehhdd"
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.serializeUser(usersRouter.serializeUser());
